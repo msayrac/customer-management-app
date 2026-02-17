@@ -17,6 +17,3 @@ class OrderFilter(django_filters.FilterSet):
 
 
 
-
-
-
