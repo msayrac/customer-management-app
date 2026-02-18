@@ -8,6 +8,15 @@ from .filters import OrderFilter
 # Create your views here.
 # functions or classes activate url go to and trigger
 
+def register(request):
+    context ={}
+    return render(request, 'accounts/register.html',context)
+
+def login(request):
+    context= {}
+    return render(request, 'accounts/login.html',context)
+    
+
 def home(request):
     orders =Order.objects.all()
     customers = Customer.objects.all()
@@ -31,7 +40,6 @@ def products(request):
     return render(request,'accounts/products.html', {'products':products})
 
 
-
 def customer(request, pk_test):
     customer = Customer.objects.get(id=pk_test)
 
@@ -44,7 +52,6 @@ def customer(request, pk_test):
     context = {'customer':customer, 'orders':orders, 'order_count':order_count, 'myFilter':myFilter}
     # return HttpResponse('Customer Page')
     return render(request, 'accounts/customer.html',context)
-
 
 
 def createOrder(request, pk):
@@ -63,7 +70,6 @@ def createOrder(request, pk):
     
     context = {'formset':formset}    
     return render(request, 'accounts/order_form.html', context)
-
 
 
 def updateOrder(request, pk):
