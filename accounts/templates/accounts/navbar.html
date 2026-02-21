@@ -31,5 +31,12 @@
     </div>
   </div>
   <span class="hello-msg">Hello, {{request.user}}</span>
-  <span><a class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+  <!-- <span><a class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+    -->
+  <span>
+    <form action="{% url 'logout' %}" method="POST" style="display: inline;">
+      {% csrf_token %}
+      <button type="submit" class="hello-msg" style="background: none; border: none; padding: 0; cursor: pointer;">Logout</button>
+    </form>
+  </span>
 </nav>
