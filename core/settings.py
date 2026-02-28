@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'django_filters',
     'signals',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'DEMO_TEST',
         'USER':'postgres',
-        'PASSWORD': '',
+        'PASSWORD': 'Admin1234.',
+        'HOST':'localhost',
+        'PORT':'5432'
     }
 }
 
